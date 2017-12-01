@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>All Comedians</title>
+  </head>
+  <body>
+    <h2>Average Age of Comedians: <%= Comedian.average_age.to_i %></h2>
+    <% @comedians.each do |comedian|%>
+      <h2><%= comedian.name  %></h2>
+      <p>Age: <%= comedian.age  %></p>
+      <p>Number of Specials: <%= comedian.specials.count %></p>
+      <p>Specials:</p>
+      <ul>
+        <% comedian.specials.each do |special| %>
+          <li><%= special.name %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  </body>
+</html>
